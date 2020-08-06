@@ -19,14 +19,14 @@
                 <div class="pelicula">
                     <div class="form">
                         <h2>Login</h2>
-                        <form action="send" method="POST">
+                        <form>
                             <label for="username"><i class="fas fa-user"></i>
                                 <input type="text" name="user" id="username" required placeholder="Username"
-                                    maxlength="15">
+                                    maxlength="15" autocomplete="username">
                             </label>
                             <label for="password"><i class="fas fa-key"></i>
                                 <input type="password" name="pass" id="password" required placeholder="Password"
-                                    maxlength="20">
+                                    maxlength="20" autocomplete="current-password">
                                 </i></label>
                             <input type="submit" value="log in">
                         </form><!-- tag-form -->
@@ -36,6 +36,7 @@
         </div><!-- pelicula -->
     </div><!-- container -->
     <script src="js/jquery.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
