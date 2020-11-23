@@ -14,7 +14,7 @@ html, body {
 
 .container {
     height: 100%;
-    background-image: url(../images/landscape3.jpg);
+    background-image: url(../images/landscape.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,10 +44,10 @@ form {
 
 .form-wraper>.pelicula {
     z-index: 4;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 50px;
-    background-color: rgba(255, 255, 255, 0.60);
-    border: 1px solid rgb(43, 48, 67);
+    background-color: rgba(200, 200, 200, 0.7);
+    /* border: 1px solid rgb(43, 48, 67); */
 }
 
 .form h2 {
@@ -88,7 +88,7 @@ label {
     width: 300px;
     background-color: transparent;
     border: 0.6px solid rgb(43, 48, 67);
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 10px;
     color: rgb(43, 48, 67);
     outline: none;
