@@ -1,43 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta name="author" content="Vinícius Fachini | VinniFachini" />
+    <meta name="description" content="Login Screen" />
+    <meta name="keywords" content="login" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10" defer></script>
 
-<head>
-    <meta name="author" content="Vinícius Fachini | VinniFachini">
-    <meta name="description" content="Learning jQuery :)">
-    <meta name="keywords" content="learning, annoying, jquery">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="https://kit.fontawesome.com/ec0133a15c.js" crossorigin="anonymous"></script>
-    <title>Learning jQuery</title>
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/script.js" defer></script>
+    <title>Login</title>
+  </head>
 
-<body>
-    <div class="container">
-        <div class="pelicula">
-            <div class="form-wraper">
-                <div class="pelicula">
-                    <div class="form">
-                        <h2>Login</h2>
-                        <form>
-                            <label for="username"><i class="fas fa-user"></i>
-                                <input type="text" name="user" id="username" required placeholder="Username"
-                                    maxlength="15" autocomplete="username">
-                            </label>
-                            <label for="password"><i class="fas fa-key"></i>
-                                <input type="password" name="pass" id="password" required placeholder="Password"
-                                    maxlength="20" autocomplete="current-password">
-                                </i></label>
-                            <input type="submit" value="log in">
-                        </form><!-- tag-form -->
-                    </div>
-                </div><!-- pelicula-forrm -->
-            </div><!-- form-wraper -->
-        </div><!-- pelicula -->
-    </div><!-- container -->
-    <script src="js/jquery.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
-
+  <body>
+    <div id="app">
+      <div class="form-wrapper-login">
+        <div class="form-title">
+          <h1 class="title">LOGAR</h1>
+        </div>
+        <form>
+          <input
+            autocomplete="disabled"
+            v-model.lazy="username"
+            class="input-form"
+            type="text"
+            placeholder="Usuário"
+          />
+          <input
+            autocomplete="disabled"
+            v-model.lazy="password"
+            class="input-form"
+            type="password"
+            placeholder="Senha"
+          />
+          <input
+            autocomplete="disabled"
+            @click.prevent="authControl"
+            class="submit-form"
+            type="submit"
+            value="Logar"
+          />
+        </form>
+        <div class="opt">
+          <span class="perdeu-senha">Perdeu sua senha?</span>
+          <span @click="criarConta" class="criar-conta">Criar conta</span>
+        </div>
+      </div>
+      <div class="form-wrapper-register">
+        <div class="form-title">
+          <h1 class="title registro">REGISTRAR</h1>
+        </div>
+        <form>
+          <div class="columns">
+            <div class="first-column">
+              <input
+                autocomplete="disabled"
+                class="input-form registro"
+                type="text"
+                placeholder="Usuário"
+              />
+              <input
+                autocomplete="disabled"
+                class="input-form registro"
+                type="password"
+                placeholder="Senha"
+              />
+              <input
+                autocomplete="disabled"
+                class="input-form registro"
+                type="text"
+                placeholder="CPF (123.456.789-10)"
+              />
+            </div>
+            <div class="second-column">
+              <input
+                autocomplete="disabled"
+                class="input-form registro"
+                type="email"
+                placeholder="E-mail"
+              />
+              <input
+                autocomplete="disabled"
+                class="input-form registro"
+                type="password"
+                placeholder="Repita a Senha"
+              />
+              <input
+                autocomplete="disabled"
+                class="input-form registro"
+                type="text"
+                placeholder="Nome Completo"
+              />
+            </div>
+          </div>
+          <input class="submit-form registro" type="submit" value="Criar" />
+        </form>
+        <span class="faca-login"
+          >Já tem uma conta?
+          <span @click="logar" class="logar">Faça Login!</span></span
+        >
+      </div>
+    </div>
+  </body>
 </html>

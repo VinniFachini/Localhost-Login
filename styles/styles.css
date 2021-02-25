@@ -1,123 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-html, body {
-    height: 100%;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 /* RESET PADRÃO */
-
-.container {
-    height: 100%;
-    background-image: url(../images/landscape.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 1;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-.container>.pelicula {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.25);
-    width: 100%;
-    height: 100%;
+html,
+body {
+  height: 100%;
+}
+::selection {
+  background: #fc1b2e71;
 }
 
+div#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #3291c7;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LOGIN */
+
+.form-wrapper-login {
+  background-color: #121217;
+  height: 24.5rem;
+  width: 22rem;
+  border-radius: 3px;
+  filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.3));
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  transition: all .3s linear;
+}
+.form-title {
+  margin-top: 2rem;
+  border-left: 20px solid #fc1b2d;
+  margin-bottom: 0.4rem;
+}
+.title {
+  color: #ebebeb;
+  font-size: 3rem;
+  padding-left: 25px;
+}
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input.input-form {
+  width: 90%;
+  height: 3rem;
+  background-color: #18181e;
+  border: none;
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-size: 1.25rem;
+  padding-left: 20px;
+  outline: none;
+  margin-top: 1.25rem;
+  border: 1px solid transparent;
+  transition: all 0.15s linear;
 }
 
-.form-wraper>.pelicula {
-    z-index: 4;
-    border-radius: 4px;
-    padding: 50px;
-    background-color: rgba(200, 200, 200, 0.7);
-    /* border: 1px solid rgb(43, 48, 67); */
+input.input-form:focus {
+  border-color: #fc1b2d;
 }
 
-.form h2 {
-    color: rgb(43, 48, 67);
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 5px;
-    letter-spacing: 2px;
+input.input-form::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b8b8b8;
+  opacity: 1; /* Firefox */
 }
 
-/* CENTRALIZAÇÃO E COMEÇO DE ESTILIZAÇÃO */
-
-input[type=text], input[type=password] {
-    background-color: transparent;
-    border: none;
-    width: 200px;
-    outline: none;
-    margin-left: 5px;
-    color: rgb(43, 48, 67);
-    letter-spacing: 1px;
-    font-weight: normal;
+input.input-form:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #b8b8b8;
 }
 
-::placeholder {
-    color: rgb(43, 48, 67);
+input.input-form:-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #b8b8b8;
+}
+
+.submit-form {
+  height: 4rem;
+  width: 90%;
+  margin-top: 2.05rem;
+  color: white;
+  font-weight: bold;
+  background-color: #fc1b2d;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+.submit-form:hover {
+  background-color: #a0010e;
+}
+span.perdeu-senha {
+  position: absolute;
+  bottom: 1.56rem;
+  left: 1rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+.opt {
+  display: flex;
+}
+span.criar-conta {
+  position: absolute;
+  font-size: 0.875rem;
+  bottom: 1.56rem;
+  right: 1.2rem;
+  color: #fc1b2d;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.1s linear;
+}
+span.criar-conta:hover {
+  color: #a0010e;
+}
+
+/* REGISTER */
+
+.form-wrapper-register {
+  background-color: #121217;
+  height: 29rem;
+  width: 40rem;
+  border-radius: 3px;
+  filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.3));
+  transform: rotateY(90deg);
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  transition: all .3s linear;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.first-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.second-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* .input-form.registro{width: 95%;} */
+
+.submit-form.registro {
+  width: 320px;
+  position: relative;
+}
+
+.faca-login {
+  position: absolute;
+  bottom: 1.56rem;
+  left: 10rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+.logar {
+  cursor: pointer;
+  margin-left: 1rem;
+  color: #fc1b2d;
+}
+.logar:hover {
+  color: #a0010e;
+}
+
+.form-wrapper-register{
+  display: none;
+}
+
+@keyframes loginTwist {
+  from {
+    transform: rotateY(0);
     opacity: 1;
+  }
+  to {
+    transform: rotateY(90deg);
+    opacity: 0;
+    display: none;
+  }
 }
-
-:-ms-input-placeholder {
-    color: rgb(43, 48, 67);
-}
-
-::-ms-input-placeholder {
-    color: rgb(43, 48, 67);
-}
-
-label {
-    width: 300px;
-    background-color: transparent;
-    border: 0.6px solid rgb(43, 48, 67);
-    border-radius: 4px;
-    padding: 10px;
-    color: rgb(43, 48, 67);
-    outline: none;
-    margin-top: 10px;
-}
-
-input[type=submit] {
-    margin-top: 25px;
-    background-color: transparent;
-    padding: 8px 50px;
-    border: 1px solid rgb(43, 48, 67);
-    border-radius: 50px;
-    color: rgb(43, 48, 67);
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .3s ease-in-out;
-}
-
-input[type=submit]:hover {
-    background-color: rgb(43, 48, 67);
-    color: white;
-    transform: scale(1.05);
-    transition: .3s ease-in-out;
-}
-
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
-    border: 0px solid white;
-    -webkit-text-fill-color: rgb(43, 48, 67) !important;
-    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset;
-    transition: background-color 5000s ease-in-out 0s;
+@keyframes registerTwist {
+  from {
+    display: none;
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0);
+    opacity: 1;
+    display: block;
+  }
 }
